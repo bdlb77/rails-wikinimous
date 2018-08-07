@@ -1,8 +1,15 @@
 
-<div class="container">
-	<% @articles.each do |article| %>
-	<h2><%= link_to article.title, article_path(article) %></h2>
-	<p><%= article.content %></p>
-	<% end %>
+<div class="container text-center">
+	<div class="row">
+		<% @articles.each do |article| %>
+			<h2><%= link_to article.title, article_path(article) %></h2>
+			<p><%= article.content %></p>
+			<p><%= link_to "delete", article_path(article),  method: :delete %></p>
+		<% end %>
+	</div>
+	<div class="row">
+		Create a new article?
+		<%= link_to "click here", new_article_path %>
+	</div>
 </div>
 
